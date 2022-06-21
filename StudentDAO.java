@@ -6,7 +6,10 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.Iterator;
 
+import oracle.jdbc.driver.OracleDriver;
 
 public class StudentDAO {
 	Connection conn;
@@ -96,15 +99,8 @@ public class StudentDAO {
 	
 	
 	
-	//2.로그인 처리를 위한 메소드를 만들기 loginUser(); // 파라메터가 필요할까?
-	// ( ↑ ) , true false를 이용해서 true가 나오면 로그인 됨 <-이것만정답 x
-	//        , -1은 확실히 실패 그외에는 성공 ( jdbc) ..
-	public boolean loginUser(String id , String pw) { // 네이버 : 아이디 입력 , 비밀번호 입력
-		return false;
-	}
 	
-	
-	
+
 	
 	// ???? JDBC통해서 연결과 연결해제 등등의 기능이 필요하다면 가지고 와야함.
 	// API의 경우 내가 직접 코딩하는게 적음(==> 이미 만들어진기능을 호출해서사용)

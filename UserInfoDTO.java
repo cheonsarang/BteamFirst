@@ -21,6 +21,14 @@ public class UserInfoDTO {
 		this.update_ymd = update_ymd;
 	}
 
+	public UserInfoDTO() {
+
+	}
+
+	public UserInfoDTO(String id, String pw, String first_name2, String last_name2) {
+
+	}
+
 	public int getStudent_no() {
 		return student_no;
 	}
@@ -75,6 +83,11 @@ public class UserInfoDTO {
 
 	public void setUpdate_ymd(String update_ymd) {
 		this.update_ymd = update_ymd;
+	}
+
+	public void setStudent_no(String rtnStrMsg) {
+		// TODO Auto-generated method stub
+		
 	}
 	
 	
