@@ -4,18 +4,18 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title>For문 이용</title>
 </head>
 <body>
-	<h1>반복문을 써 봅시다</h1>
-	<!-- for문으로 p태그 30개 -->
+	<h1>반복문을 써 봅시다.</h1>
+	<!--  for문으로 p태그 30개 출력해보기 for(변수선언; 조건식; 증감식) for(int i = 0 ; i < 10 ; i++)  -->
+	<p>찍음 인덱스()</p>
+	<%for(int i = 1; i<=30 ; i ++){ %>
+		<p>찍음 인덱스(<%=i%>)</p>
 	
-	<%! String a = "와우"; %>
+	<% }%>
 	
-	<% for(int i = 0; i < 30; i++) {%>
-		<p>찍음 인덱스()</p>
-		<%= a %>
-	<%}%>
+	
 	
 </body>
 </html>

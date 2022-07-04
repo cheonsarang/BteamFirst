@@ -7,23 +7,24 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<!-- for, if 문 중첩 / 1 ~ 100까지의 수 중 짝수의 합, 홀수의 합 출력
-	짝수도 출력, 홀수도 출력 -->
+	<!--  
+			for문과 if문을 중첩시키기 
+			1~100까지의 수중 짝수의합 홀수의합을 출력
+			짝수도 출력(빨간) , 홀수도 출력(파란)
+	-->
+	<%
+		int oddSum = 0 , evenSum = 0 ;
+		for(int i = 1 ; i<=100 ; i ++){
+		if(i%2==0){ evenSum+=i;%>
+			<p style="color: red;"><%=i %><p>
+		<%}else{ oddSum+=i;%>
+			<p style="color: blue;"><%=i %><p>
+		<%}
 	
-	<% int i = 0; 
-		int oddsum = 0; 
-		int evensum = 0; %>
+	}%>
 	
-	<%for(i = 1; i <= 100; i++) {%>
-		<%if(i % 2 == 0) {%>
-			<p style = "color:red"; font-size = 3px;><%= i %></p>
-			<%evensum  += i;%>
-		<%}else{%>
-			<p style = "color:blue"><%= i %></p>
-			<%oddsum += i; %>
-		<%}%>
-	<%}%>
-	짝수의 합 : <%= evensum %>
-	홀수의 합 : <%= oddsum %>
+	홀수의합:<%=oddSum %>
+	짝수의합:<%=evenSum %>
+	
 </body>
 </html>
