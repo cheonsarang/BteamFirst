@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 A
 <<<<<<< HEAD
 B
@@ -6,3 +7,8 @@ CC
 BB
 C
 >>>>>>> ba201c88e303a1d63e7ad9b6dfafe76dc51318a4
+=======
+AA
+B
+C
+>>>>>>> 9d87409c03b7a2c09f5cb4ca5efcb793278a0418
