@@ -1,5 +1,15 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<<<<<<< HEAD
+=======
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
     <footer>
         <div class="inner">
             <div class="upper">
@@ -21,8 +31,14 @@
                 </p>
             </div>
         </div>
+<<<<<<< HEAD
     </footer>
 
  
 
  
+=======
+    </footer>	
+</body>
+</html>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0

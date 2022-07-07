@@ -27,9 +27,15 @@ public class CustomerController extends HttpServlet {
 		}else if (req.getServletPath().equals("/insert.cu")) {
 			CustomerDTO dto = new CustomerDTO();
 			dto.setName(req.getParameter("name"));
+<<<<<<< HEAD
 			dto.setPhone(req.getParameter("phone"));
 			dto.setEmail(req.getParameter("email"));
 			dto.setGender(req.getParameter("gender"));
+=======
+			dto.setGender(req.getParameter("gender"));
+			dto.setEmail(req.getParameter("email"));
+			dto.setPhone(req.getParameter("phone"));
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 			int result = dao.insert(dto);
 			return ;
 		}

@@ -2,6 +2,7 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
 <mapper namespace="cus"><!-- 외부에서 접근할때 어떤 이름으로 접근을할건지를 지정해놓은 부분 -->
 
 	<!-- ;<- 조회쿼리 작성시 (==jdbc ;<-생략) 생략 -->
@@ -17,4 +18,18 @@
 		</select> -->
 
 
+=======
+<mapper namespace="cus"><!-- 외부에서 접근할 때 클래스의 이름을 주듯이 접근할 이름을 지정 test.selectTest-->
+  <!-- 조회쿼리 작성시 (==jdbc; 생략) 생략 -->
+  <select id="listselect" resultType="customer.CustomerDTO"><!-- 다양하게 바꿀 수 있음-->
+    SELECT * FROM CUSTOMER ORDER BY id
+  </select>
+  <!-- 다른 쿼리가 필요하다면 select 태그를 이용해서 추가 -->
+  <!--  <select id="listselect2" resultType="">
+  </select>-->
+  <insert id="insert">
+  	insert into customer (name, gender, email, phone)
+	values (#{name}, #{gender}, #{email}, #{phone})
+  </insert>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 </mapper>

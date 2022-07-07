@@ -2,15 +2,21 @@
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html lang="ko">
+<<<<<<< HEAD
 
 <body>
    	<%@ include file="include/header.jsp" %>
    
+=======
+<body>
+	<%@ include file = "include/header.jsp" %>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
     <figure>
         <video src="img/visual.mp4" autoplay muted loop></video>
         <div class="inner">
             <h1>INNOVATION</h1>
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. <br>
+<<<<<<< HEAD
 
                 Id praesentium molestias similique quaerat magni facere in a? Adipisci, possimus reprehenderit!</p>
 
@@ -75,11 +81,44 @@
 
                     <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
 
+=======
+                Id praesentium molestias similique quaerat magni facere in a? Adipisci, possimus reprehenderit!</p>
+            <a href="#">view detail</a>
+        </div>
+    </figure>
+    <section>
+        <div class="inner">
+            <h1>소개 영상</h1>
+            <div class="wrap">
+                <article>
+                    <div class="youtube">
+						<iframe width="300" height="300" src="https://www.youtube.com/embed/562LXp02nuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h2><a href="#">Lorem ipsum dolor sit.</a></h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+                        maiores!</p>
+                </article>
+                <article>
+                    <div class="youtube">
+                        <iframe width="300" height="300" src="https://www.youtube.com/embed/562LXp02nuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h2><a href="#">Lorem ipsum dolor sit.</a></h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+                        maiores!</p>
+                </article>
+                <article>
+                    <div class="youtube">
+                        <iframe width="300" height="300" src="https://www.youtube.com/embed/562LXp02nuI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    </div>
+                    <h2><a href="#">Lorem ipsum dolor sit.</a></h2>
+                    <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Vitae minus, eaque corrupti vero ad
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
                         maiores!</p>
                 </article>
             </div>
         </div>
     </section>
+<<<<<<< HEAD
 
  	<%@ include file="include/footer.jsp" %>
    
@@ -92,4 +131,8 @@
 
  
 
+=======
+	<%@ include file = "include/footer.jsp" %>
+</body>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 </html>

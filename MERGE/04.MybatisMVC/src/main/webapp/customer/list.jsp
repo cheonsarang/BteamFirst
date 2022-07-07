@@ -6,7 +6,38 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
 <title>Insert title here</title>
+=======
+<title>고객정보보기</title>
+<style>
+	body {
+		display: table;
+		margin: 0px auto;
+	}
+	
+	h1 {
+		text-align: center;
+	}
+
+	table {
+		margin: 20px auto;
+		border: 2px solid #000;
+		border-collapse: collapse;
+		text-align: center;
+	}
+	
+	th, td{
+		border: 2px solid #000;
+		width : 60px;
+	}
+	
+	th {
+		background-color: #000;
+		color: #fff;
+	}
+</style>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 </head>
 <body>
 	<%@ include file="/include/header.jsp"%>

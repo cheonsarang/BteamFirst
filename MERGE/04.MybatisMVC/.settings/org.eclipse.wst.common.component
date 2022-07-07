@@ -1,15 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?><project-modules id="moduleCoreId" project-version="1.5.0">
         
+<<<<<<< HEAD
     <wb-module deploy-name="04.MybatisMVC-0.0.1-SNAPSHOT">
+=======
+    <wb-module deploy-name="04.MybattisMVC-0.0.1-SNAPSHOT">
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
         <wb-resource deploy-path="/" source-path="/target/m2e-wtp/web-resources"/>
                 
         <wb-resource deploy-path="/" source-path="/src/main/webapp" tag="defaultRootSource"/>
                 
         <wb-resource deploy-path="/WEB-INF/classes" source-path="/src/main/java"/>
                 
+<<<<<<< HEAD
         <property name="context-root" value="04.MybatisMVC"/>
                 
         <property name="java-output-path" value="/04.MybatisMVC/build/classes"/>
+=======
+        <property name="context-root" value="04.MybattisMVC"/>
+                
+        <property name="java-output-path" value="/04.MybattisMVC/build/classes"/>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
             
     </wb-module>
     

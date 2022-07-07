@@ -1,6 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <projectDescription>
+<<<<<<< HEAD
 	<name>04.MybatisMVC</name>
+=======
+	<name>04.MybattisMVC</name>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 	<comment></comment>
 	<projects>
 	</projects>
