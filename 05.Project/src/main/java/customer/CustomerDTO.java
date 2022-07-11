@@ -1,20 +1,12 @@
 package customer;
 
-public class CustomerDTO {
-<<<<<<< HEAD
+public class customerDTO {
+	private String 	id, name, gender, email, phone;
 	
-	private int id;
-	private String name, gender, email, phone;
-=======
-
-	private int id;
-	private String name, gender, email, phone;
-	
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -43,8 +35,5 @@ public class CustomerDTO {
 	}
 	
 	
-<<<<<<< HEAD
-=======
 	
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
 }

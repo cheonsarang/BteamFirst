@@ -1,13 +1,9 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
-<<<<<<< HEAD
 <head>
-=======
-    <head>
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
         <meta charset="utf-8" />
         <meta http-equiv="X-UA-Compatible" content="IE=edge" />
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
@@ -21,11 +17,7 @@
     <body class="sb-nav-fixed">
         <nav class="sb-topnav navbar navbar-expand navbar-dark bg-dark">
             <!-- Navbar Brand-->
-<<<<<<< HEAD
             <a class="navbar-brand ps-3" href="index.jsp">Hanul301 KYM</a>
-=======
-            <a class="navbar-brand ps-3" href="index.jsp">Hanul301 YSH</a>
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
             <!-- Sidebar Toggle-->
             <button class="btn btn-link btn-sm order-1 order-lg-0 me-4 me-lg-0" id="sidebarToggle" href="#!"><i class="fas fa-bars"></i></button>
             <!-- Navbar Search-->
@@ -39,42 +31,25 @@
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-<<<<<<< HEAD
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><hr class="dropdown-divider" /></li>
                         
-                    
-                        <!-- 세션에 로그인정보를 저장하고 세션에 로그인정보가 있는지
-                        	 없는지에 따라서 로그아웃,내정보 보기 또는 로그인을 보여준다.
-                          -->
+                        <!-- 세션에 로그인 정보를 저장하고 세션에 로그인 정보가 있는지 없는지에 따라 로그아웃, 내정보 보기 또는 로그인을 보여준다 -->
                         <c:if test="${empty userInfo}">
-                         <li><a class="dropdown-item" href="login">로그인</a></li>
-                             <li><hr class="dropdown-divider" /></li>
-                         <li><a class="dropdown-item" href="join">회원가입</a></li>
+                        <li><a class="dropdown-item" href="login">로그인</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                       	<li><a class="dropdown-item" href="join">회원가입</a></li>
                         </c:if>
                         <c:if test="${!empty userInfo}">
                         <li><a class="dropdown-item" href="logout">로그아웃</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="info">내정보</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                       	<li><a class="dropdown-item" href="info">내 정보 보기</a></li>
                         </c:if>
-=======
-                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
-                   
-                      
-                        <!-- 세션에 로그인정보를 저장하고 세견에 로그인정보가 있는지
-                        없는지에 따라서 로그아웃, 내정보 보기 또는 로그인을 보여준다. -->
-                        <c:if test="${empty userInfo }">
-                        <li><a class="dropdown-item" href="login">로그인</a></li>
-                        	<li><hr clclass="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="jogin">회원가입</a></li>  
-                        </c:if>
-                        <c:if test="${! empty userInfo }">
-                        <li><a class="dropdown-item" href="logout">로그아웃</a></li>
-                        	<li><hr clclass="dropdown-divider"></li>
-                        <li><a class="dropdown-item" href="info">내정보</a></li>  
-                        </c:if>
-       
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
                     </ul>
+                        
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        
+                        
                 </li>
             </ul>
         </nav>
@@ -86,12 +61,11 @@
                             <div class="sb-sidenav-menu-heading">고객관리</div>
                             <a class="nav-link" href="list.cu">
                                 <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
-<<<<<<< HEAD
                                 고객정보조회
                             </a>
                             <div class="sb-sidenav-menu-heading">HR관리</div>
                              <a class="nav-link" href="list.emp">
-                               <div class="sb-nav-link-icon"><i class="fa-solid fa-address-book"></i></div>
+                               <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
                                 사원 조회
                             </a>
                                <a class="nav-link" href="list.dept">
@@ -100,20 +74,6 @@
                             </a>
                             
                           
-=======
-                                고객정보 조회
-                            </a>
-                            <div class="sb-sidenav-menu-heading">HR관리</div>
-                            <a class="nav-link" href="list.emp">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-list-ul"></i></div>
-                                사원정보 조회
-                            </a>
-                              <a class="nav-link" href="list.dept">
-                                <div class="sb-nav-link-icon"><i class="fa-solid fa-bars"></i></div>
-                                부서정보 조회
-                            </a>
-                            
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
                             <div class="collapse" id="collapsePages" aria-labelledby="headingTwo" data-bs-parent="#sidenavAccordion">
                                 <nav class="sb-sidenav-menu-nested nav accordion" id="sidenavAccordionPages">
                                     <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#pagesCollapseAuth" aria-expanded="false" aria-controls="pagesCollapseAuth">
@@ -127,21 +87,12 @@
                                             <a class="nav-link" href="password.html">Forgot Password</a>
                                         </nav>
                                     </div>
-<<<<<<< HEAD
-=======
-                           
-                             
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
                                 </nav>
                             </div>
                             <div class="sb-sidenav-menu-heading">게시판</div>
                             <a class="nav-link" href="charts.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
-<<<<<<< HEAD
                                 공지 사항
-=======
-                                공지사항
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
                             </a>
                             <a class="nav-link" href="tables.html">
                                 <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -156,10 +107,6 @@
                 </nav>
             </div>
             <div id="layoutSidenav_content">
-<<<<<<< HEAD
 
 </body>
-=======
- </body>
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
 </html>

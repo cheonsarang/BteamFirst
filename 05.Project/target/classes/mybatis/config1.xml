@@ -15,7 +15,7 @@
     </environment>
   </environments>
   <mappers>
-	<mapper resource="emp/emp-mapper.xml"/>
-	<mapper resource="dept/dept-mapper.xml"/>
+    <mapper resource="mapper/emp-mapper.xml"/>
+    <!-- 추후 mapper *-mapper.xml 전체 인식함 -->
   </mappers>
 </configuration>

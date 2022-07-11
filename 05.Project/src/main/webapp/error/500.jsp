@@ -8,11 +8,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
-<<<<<<< HEAD
-        <title>500 Error</title>
-=======
         <title>404 Error - SB Admin</title>
->>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -25,10 +21,11 @@
                             <div class="col-lg-6">
                                 <div class="text-center mt-4">
                                     <h1 class="display-1">500</h1>
-                                    <p class="lead">개발자 오류</p>
+                                    <p class="lead">요청하신 페이지를 찾을 수 없거나 없는 페이지 입니다</p>
+                                    <p class="lead">해당하는 페이지에서 작업이 필요하다면 개발자에게 연락</p>
                                     <a href="/pj">
                                         <i class="fas fa-arrow-left me-1"></i>
-                                        홈으로 돌아가기
+                                        홈으로 돌악아!
                                     </a>
                                 </div>
                             </div>

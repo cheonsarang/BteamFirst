@@ -8,24 +8,20 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-import customer.customerDTO;
-
-public class empDAO {
+public class deptDAO {
 	static SqlSession sql;
 	static {
 		String resource = "mybatis/config1.xml";
-		InputStream inputStream;
 		try {
-			inputStream = Resources.getResourceAsStream(resource);
+			InputStream inputStream = Resources.getResourceAsStream(resource);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
 			sql = sqlSessionFactory.openSession(true); 
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 	}
-	
 	public List<DTO> getList(){
-		List<DTO> list = sql.selectList("cus.emp");
-		return list;
+		List<DTO> list1 = sql.selectList("cus.dept");
+		return list1;
 	}
 }
