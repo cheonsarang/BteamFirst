@@ -1,9 +1,16 @@
 package customer;
 
 public class CustomerDTO {
+<<<<<<< HEAD
 	
 	private int id;
 	private String name, gender, email, phone;
+=======
+
+	private int id;
+	private String name, gender, email, phone;
+	
+>>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
 	public int getId() {
 		return id;
 	}
@@ -36,4 +43,8 @@ public class CustomerDTO {
 	}
 	
 	
+<<<<<<< HEAD
+=======
+	
+>>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
 }

@@ -8,7 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+<<<<<<< HEAD
         <title>500 Error</title>
+=======
+        <title>404 Error - SB Admin</title>
+>>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>

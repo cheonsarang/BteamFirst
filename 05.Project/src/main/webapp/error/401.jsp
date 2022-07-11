@@ -8,7 +8,11 @@
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
         <meta name="description" content="" />
         <meta name="author" content="" />
+<<<<<<< HEAD
         <title>401 Error</title>
+=======
+        <title>404 Error - SB Admin</title>
+>>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
         <link href="css/styles.css" rel="stylesheet" />
         <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
     </head>
@@ -22,10 +26,17 @@
                                 <div class="text-center mt-4">
                                     <h1 class="display-1">401</h1>
                                     <p class="lead">거부됨</p>
+<<<<<<< HEAD
                                     <p>이 리소스에 대한 액세스가 거부되었습니다..</p>
                                     <a href="/pj">
                                         <i class="fas fa-arrow-left me-1"></i>
                                           홈으로 다시 돌아가기
+=======
+                                    <p>이 리소스에 대한 액세스가 거부되었습니다.</p>
+                                    <a href="/pj">
+                                        <i class="fas fa-arrow-left me-1"></i>
+                                        홈으로 돌아가기
+>>>>>>> d9f14bf55e061a43cdbfa2b9837d14f2f5b3fb2f
                                     </a>
                                 </div>
                             </div>
