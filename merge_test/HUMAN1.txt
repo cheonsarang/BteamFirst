@@ -1,5 +1,5 @@
 <<<<<<< HEAD
 휴먼1 작업
-휴먼1
+AAAAAAAA휴먼1
 BBBBBBB
 >>>>>>> ed2f0a2738bb3e9ede5bd65c236c9955cce29271
