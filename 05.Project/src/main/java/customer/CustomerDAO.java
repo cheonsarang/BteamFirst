@@ -9,35 +9,33 @@ import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 import org.apache.ibatis.session.SqlSessionFactoryBuilder;
 
-public class CustomerDAO {
-	
-	private static SqlSession sql;
-	
+import customer.customerDTO;
+
+public class customerDAO {
+	static SqlSession sql;
 	static {
+		String resource = "mybatis/config.xml";
+		InputStream inputStream;
 		try {
-			String resource = "mybatis/config.xml";
-			InputStream inputStream;
 			inputStream = Resources.getResourceAsStream(resource);
 			SqlSessionFactory sqlSessionFactory = new SqlSessionFactoryBuilder().build(inputStream);
-			sql = sqlSessionFactory.openSession();
-		} catch (IOException e) {
+			sql = sqlSessionFactory.openSession(true); 
+		} catch (Exception e) {
 			e.printStackTrace();
-		}//try
-	}//static
+		}
+	}
 	
-	public List<CustomerDTO> getList(){
-		
-		List<CustomerDTO> list = sql.selectList("cus.listselect"); 	
+	public List<customerDTO> getList(){
+		// sql.update , sql.delete , sql.selectone , seclectlist (return타입이 List)
+		List<customerDTO> list = sql.selectList("cus.listselect");
 		return list;
-	}//list()
-	
-	public int delete(CustomerDTO dto) {
-		int result = sql.delete("cus.deletedata",dto);
-		System.out.println(result);
-		return result;
 	}
 	
 	public int delete(String id) {
-		return sql.delete("cus.deletedata", id);
+		return sql.delete("cus.delete", id);
+		
 	}
-}//class
+	
+	
+	
+}

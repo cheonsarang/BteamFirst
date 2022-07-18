@@ -42,16 +42,26 @@ public class CustomerDAO {
 	public List<CustomerDTO> getList(){
 		// sql.update , sql.delete , sql.selectone , seclectlist (return타입이 List)
 		List<CustomerDTO> list = sql.selectList("cus.listselect");
+<<<<<<< HEAD
+		System.out.println(list.size());
+=======
 		//System.out.println(list.size());
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 		return list;
 	}
 
 	public int insert(CustomerDTO dto) {
+<<<<<<< HEAD
+		// sql맵퍼에 파라메터(사용할변수들)를 보내는 방법  ( 하나만 넘길수있음) ex)String<-1,HashMap<-1,ArrayList<-1
+		int result = sql.insert("cus.insert",dto);
+		sql.commit();// Mybatis는 Auto Commit속성이 기본적으로 false 임
+=======
 		// sql맵퍼에 파라메터(사용할변수들)을 보내는 방법 (하나만 넘길 수 있음)
 		// Sting, HashMap, ArrayList 모두 1개로 받음
 		int result = sql.insert("cus.insert", dto);
 		//Mybatis는 Auto Commit속성이 기본적으로 false임, 커밋이 따로 있음
 		sql.commit();
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 		return result;
 	}
 	

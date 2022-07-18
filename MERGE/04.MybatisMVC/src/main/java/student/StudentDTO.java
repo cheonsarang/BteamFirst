@@ -1,10 +1,17 @@
 package student;
 
 public class StudentDTO {
+<<<<<<< HEAD
+	private String student_name,  user_id, user_pw, first_name, last_name, create_ymd, update_ymd, admin_yn;
+	private int student_no, money;
+	
+	
+=======
 	private int student_no, money;
 	private String student_name, user_id, user_pw, first_name, last_name, create_ymd, update_ymd, admin_yn;
 	
 	public StudentDTO() {}
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 	
 	public StudentDTO(String student_name, String user_id, String user_pw, String first_name, String last_name,
 			int student_no) {

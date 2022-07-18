@@ -15,7 +15,8 @@
     </environment>
   </environments>
   <mappers>
-	<mapper resource="test/test-mapper.xml"/>
-	<mapper resource="customer/cus-mapper.xml"/>
+    <mapper resource="mapper/test-mapper.xml"/>
+    <mapper resource="mapper/cus-mapper.xml"/>
+    <!-- 추후 mapper *-mapper.xml 전체 인식함 -->
   </mappers>
 </configuration>

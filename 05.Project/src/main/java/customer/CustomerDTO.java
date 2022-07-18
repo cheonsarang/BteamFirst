@@ -1,13 +1,12 @@
 package customer;
 
-public class CustomerDTO {
+public class customerDTO {
+	private String 	id, name, gender, email, phone;
 	
-	private int id;
-	private String name, gender, email, phone;
-	public int getId() {
+	public String getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(String id) {
 		this.id = id;
 	}
 	public String getName() {
@@ -34,6 +33,7 @@ public class CustomerDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+	
 	
 	
 }

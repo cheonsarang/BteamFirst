@@ -1,6 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+ <%@ taglib uri = "http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -31,23 +31,25 @@
             <ul class="navbar-nav ms-auto ms-md-0 me-3 me-lg-4">
                 <li class="nav-item dropdown">
                     <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fas fa-user fa-fw"></i></a>
-					<ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                    <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="navbarDropdown">
+                        <li><hr class="dropdown-divider" /></li>
                         
-                    
-                        <!-- 세션에 로그인정보를 저장하고 세션에 로그인정보가 있는지
-                        	 없는지에 따라서 로그아웃,내정보 보기 또는 로그인을 보여준다.
-                          -->
+                        <!-- 세션에 로그인 정보를 저장하고 세션에 로그인 정보가 있는지 없는지에 따라 로그아웃, 내정보 보기 또는 로그인을 보여준다 -->
                         <c:if test="${empty userInfo}">
-                         <li><a class="dropdown-item" href="login">로그인</a></li>
-                             <li><hr class="dropdown-divider" /></li>
-                         <li><a class="dropdown-item" href="join">회원가입</a></li>
+                        <li><a class="dropdown-item" href="login">로그인</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                       	<li><a class="dropdown-item" href="join">회원가입</a></li>
                         </c:if>
                         <c:if test="${!empty userInfo}">
                         <li><a class="dropdown-item" href="logout">로그아웃</a></li>
-                            <li><hr class="dropdown-divider" /></li>
-                        <li><a class="dropdown-item" href="info">내정보</a></li>
+                        <li><hr class="dropdown-divider" /></li>
+                       	<li><a class="dropdown-item" href="info">내 정보 보기</a></li>
                         </c:if>
                     </ul>
+                        
+                        <li><a class="dropdown-item" href="#!">Logout</a></li>
+                        
+                        
                 </li>
             </ul>
         </nav>
@@ -63,7 +65,7 @@
                             </a>
                             <div class="sb-sidenav-menu-heading">HR관리</div>
                              <a class="nav-link" href="list.emp">
-                               <div class="sb-nav-link-icon"><i class="fa-solid fa-address-book"></i></div>
+                               <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
                                 사원 조회
                             </a>
                                <a class="nav-link" href="list.dept">

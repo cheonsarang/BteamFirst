@@ -1,10 +1,17 @@
 package customer;
 
 public class CustomerDTO {
+<<<<<<< HEAD
+	private int id;
+	private String  name, gender, email, phone;
+	
+	
+=======
 	//생성자 만들지 말라고 하셨음
 	
 	private int id;
  	private String name, gender, email, phone;
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 	
 	public int getId() {
 		return id;
@@ -36,4 +43,10 @@ public class CustomerDTO {
 	public void setPhone(String phone) {
 		this.phone = phone;
 	}
+<<<<<<< HEAD
+	
+
+}
+=======
 }//class
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0

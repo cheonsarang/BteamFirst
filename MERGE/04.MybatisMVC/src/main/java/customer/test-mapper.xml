@@ -2,8 +2,14 @@
 <!DOCTYPE mapper
   PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
   "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<<<<<<< HEAD
+<mapper namespace="test"><!--  외부에서 접근할때 클래스의 이름을 주듯이 접근할 이름을 지정  test.selectTest -->
+  <select id="selectTest" resultType="Integer">
+    	select 10 as num1 from dual
+=======
 <mapper namespace="test"><!-- 외부에서 접근할 때 클래스의 이름을 주듯이 접근할 이름을 지정 test.selectTest-->
   <select id="selectTest" resultType="Integer"><!-- 다양하게 바꿀 수 있음-->
     select 10 as num1 from dual
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
   </select>
 </mapper>

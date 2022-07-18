@@ -6,6 +6,9 @@
 <html>
 <head>
 <meta charset="UTF-8">
+<<<<<<< HEAD
+<title>Insert title here</title>
+=======
 <title>고객정보보기</title>
 <style>
 	body {
@@ -34,6 +37,7 @@
 		color: #fff;
 	}
 </style>
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 </head>
 <body>
 	<%@ include file="/include/header.jsp"%>

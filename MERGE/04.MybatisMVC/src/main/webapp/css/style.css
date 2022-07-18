@@ -12,11 +12,14 @@ a {
 	text-decoration: none;
 }
 
+<<<<<<< HEAD
+=======
 body {
 	display: table;
 	margin: 0px auto;
 }
 
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
 /* header */
 header {
 	width: 100%;
@@ -265,4 +268,48 @@ footer .inner .lower p {
 .styled-table tbody tr.active-row {
     font-weight: bold;
     color: #009879;
+<<<<<<< HEAD
 }
+
+
+
+.styled-table {
+	width: 80%;
+    border-collapse: collapse;
+    margin: 2% 10% 2% 10%;
+    font-size: 0.9em;
+    font-family: sans-serif;
+    min-width: 400px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+}
+
+.styled-table thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+}
+
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+
+.styled-table tbody tr {
+    border-bottom: 1px solid #dddddd;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+    background-color: #f3f3f3;
+}
+
+.styled-table tbody tr:last-of-type {
+    border-bottom: 2px solid #009879;
+}
+
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #009879;
+}
+=======
+}
+>>>>>>> 70784f47a1ca820634f3635bbd19b0dfea3848c0
