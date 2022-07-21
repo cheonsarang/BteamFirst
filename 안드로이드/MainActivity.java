@@ -172,6 +172,7 @@ public class MainActivity extends AppCompatActivity {
                 Intent intent = new Intent(MainActivity.this, ResultActivity.class);
                 intent.putExtra("list", list);
 
+                intent.putExtra("balance", String.valueOf(balance.getText()));
 
                 startActivity(intent);
             }
