@@ -1,0 +1,582 @@
+﻿CREATE TABLE MEMBER (
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL,
+	userpw	VARCHAR2(100)		NOT NULL,
+	name	VARCHAR2(30)		NULL,
+	phone_num	VARCHAR2(13)		NULL,
+	parent_phone	VARCHAR2(13)		NULL,
+	gender	VARCHAR2(1)	DEFAULT 'N'	NOT NULL,
+	file_path	VARCHAR2(4000)		NULL,
+	nickname	VARCHAR(60)		NULL
+);
+
+COMMENT ON COLUMN MEMBER.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE school (
+	SCHOOL_ID	NUMBER		NOT NULL,
+	school_name	VARCHAR2(100)		NOT NULL,
+	office_name	VARCHAR2(60)		NOT NULL,
+	office_code	NUMBER		NOT NULL
+);
+
+CREATE TABLE schedule (
+	day	VARCHAR2(3)		NOT NULL,
+	period	NUMBER		NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL,
+	subject	VARCHAR2(30)		NOT NULL
+);
+
+CREATE TABLE admission (
+	MST_CODE	NUMBER		NOT NULL,
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL
+);
+
+COMMENT ON COLUMN admission.MST_CODE IS '1';
+
+COMMENT ON COLUMN admission.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE board_group (
+	board_id	NUMBER		NOT NULL,
+	board_name	VARCHAR2(100)		NOT NULL
+);
+
+COMMENT ON COLUMN board_group.board_id IS '1~10: 게시판구분';
+
+CREATE TABLE board (
+	post_id	NUMBER		NOT NULL,
+	board_id	NUMBER		NOT NULL,
+	board_name	VARCHAR2(100)		NOT NULL,
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL
+);
+
+COMMENT ON COLUMN board.board_id IS '1~10: 게시판구분';
+
+COMMENT ON COLUMN board.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE board_file (
+	file_id	NUMBER		NOT NULL,
+	post_id	NUMBER		NOT NULL,
+	board_id	NUMBER		NOT NULL,
+	board_name	VARCHAR2(100)		NOT NULL,
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL
+);
+
+COMMENT ON COLUMN board_file.board_id IS '1~10: 게시판구분';
+
+COMMENT ON COLUMN board_file.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE SCRAP (
+	scrap_id	NUMBER		NOT NULL,
+	post_id	NUMBER		NOT NULL,
+	board_id	NUMBER		NOT NULL,
+	board_name	VARCHAR2(100)		NOT NULL,
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL
+);
+
+COMMENT ON COLUMN SCRAP.scrap_id IS '아이디는 모두 시퀀스로 할 예정스크랩한거 자체 번호매겨짐';
+
+COMMENT ON COLUMN SCRAP.board_id IS '1~10: 게시판구분';
+
+COMMENT ON COLUMN SCRAP.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE events (
+	success_day	DATE	DEFAULT sysdate	NOT NULL,
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL
+);
+
+COMMENT ON COLUMN events.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE BOARD_COMMENT (
+	comment_id	NUMBER		NOT NULL,
+	post_id	NUMBER		NOT NULL,
+	board_id	NUMBER		NOT NULL,
+	board_name	VARCHAR2(100)		NOT NULL,
+	MEMBER_ID	VARCHAR2(100)		NOT NULL,
+	MEMBER_GRP	VARCHAR2(3)	DEFAULT 'S'	NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL
+);
+
+COMMENT ON COLUMN BOARD_COMMENT.board_id IS '1~10: 게시판구분';
+
+COMMENT ON COLUMN BOARD_COMMENT.MEMBER_GRP IS '관리자M,선생님T,학생S';
+
+CREATE TABLE calendar (
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL,
+	context	VARCHAR2(4000)		NOT NULL,
+	division	VARCHAR2(20)		NOT NULL,
+	calendar_date	DATE	DEFAULT sysdate	NOT NULL
+);
+
+COMMENT ON COLUMN calendar.division IS '1.급식2.일정3.알림장';
+
+CREATE TABLE class_code (
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL,
+	school_grade	NUMBER		NOT NULL,
+	school_class	NUMBER		NOT NULL
+);
+
+ALTER TABLE MEMBER ADD CONSTRAINT PK_MEMBER PRIMARY KEY (
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE school ADD CONSTRAINT PK_SCHOOL PRIMARY KEY (
+	SCHOOL_ID
+);
+
+ALTER TABLE schedule ADD CONSTRAINT PK_SCHEDULE PRIMARY KEY (
+	day,
+	period,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE admission ADD CONSTRAINT PK_ADMISSION PRIMARY KEY (
+	MST_CODE,
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE board_group ADD CONSTRAINT PK_BOARD_GROUP PRIMARY KEY (
+	board_id,
+	board_name
+);
+
+ALTER TABLE board ADD CONSTRAINT PK_BOARD PRIMARY KEY (
+	post_id,
+	board_id,
+	board_name,
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE board_file ADD CONSTRAINT PK_BOARD_FILE PRIMARY KEY (
+	file_id,
+	post_id,
+	board_id,
+	board_name,
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT PK_SCRAP PRIMARY KEY (
+	scrap_id,
+	post_id,
+	board_id,
+	board_name,
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE events ADD CONSTRAINT PK_EVENTS PRIMARY KEY (
+	success_day,
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT PK_BOARD_COMMENT PRIMARY KEY (
+	comment_id,
+	post_id,
+	board_id,
+	board_name,
+	MEMBER_ID,
+	MEMBER_GRP,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE calendar ADD CONSTRAINT PK_CALENDAR PRIMARY KEY (
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE class_code ADD CONSTRAINT PK_CLASS_CODE PRIMARY KEY (
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE MEMBER ADD CONSTRAINT FK_class_code_TO_MEMBER_1 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES class_code (
+	grade_class_code
+);
+
+ALTER TABLE MEMBER ADD CONSTRAINT FK_class_code_TO_MEMBER_2 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES class_code (
+	SCHOOL_ID
+);
+
+ALTER TABLE schedule ADD CONSTRAINT FK_class_code_TO_schedule_1 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES class_code (
+	grade_class_code
+);
+
+ALTER TABLE schedule ADD CONSTRAINT FK_class_code_TO_schedule_2 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES class_code (
+	SCHOOL_ID
+);
+
+ALTER TABLE admission ADD CONSTRAINT FK_MEMBER_TO_admission_1 FOREIGN KEY (
+	MEMBER_ID
+)
+REFERENCES MEMBER (
+	MEMBER_ID
+);
+
+ALTER TABLE admission ADD CONSTRAINT FK_MEMBER_TO_admission_2 FOREIGN KEY (
+	MEMBER_GRP
+)
+REFERENCES MEMBER (
+	MEMBER_GRP
+);
+
+ALTER TABLE admission ADD CONSTRAINT FK_MEMBER_TO_admission_3 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES MEMBER (
+	grade_class_code
+);
+
+ALTER TABLE admission ADD CONSTRAINT FK_MEMBER_TO_admission_4 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES MEMBER (
+	SCHOOL_ID
+);
+
+ALTER TABLE board ADD CONSTRAINT FK_board_group_TO_board_1 FOREIGN KEY (
+	board_id
+)
+REFERENCES board_group (
+	board_id
+);
+
+ALTER TABLE board ADD CONSTRAINT FK_board_group_TO_board_2 FOREIGN KEY (
+	board_name
+)
+REFERENCES board_group (
+	board_name
+);
+
+ALTER TABLE board ADD CONSTRAINT FK_MEMBER_TO_board_1 FOREIGN KEY (
+	MEMBER_ID
+)
+REFERENCES MEMBER (
+	MEMBER_ID
+);
+
+ALTER TABLE board ADD CONSTRAINT FK_MEMBER_TO_board_2 FOREIGN KEY (
+	MEMBER_GRP
+)
+REFERENCES MEMBER (
+	MEMBER_GRP
+);
+
+ALTER TABLE board ADD CONSTRAINT FK_MEMBER_TO_board_3 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES MEMBER (
+	grade_class_code
+);
+
+ALTER TABLE board ADD CONSTRAINT FK_MEMBER_TO_board_4 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES MEMBER (
+	SCHOOL_ID
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_1 FOREIGN KEY (
+	post_id
+)
+REFERENCES board (
+	post_id
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_2 FOREIGN KEY (
+	board_id
+)
+REFERENCES board (
+	board_id
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_3 FOREIGN KEY (
+	board_name
+)
+REFERENCES board (
+	board_name
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_4 FOREIGN KEY (
+	MEMBER_ID
+)
+REFERENCES board (
+	MEMBER_ID
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_5 FOREIGN KEY (
+	MEMBER_GRP
+)
+REFERENCES board (
+	MEMBER_GRP
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_6 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES board (
+	grade_class_code
+);
+
+ALTER TABLE board_file ADD CONSTRAINT FK_board_TO_board_file_7 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES board (
+	SCHOOL_ID
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_1 FOREIGN KEY (
+	post_id
+)
+REFERENCES board (
+	post_id
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_2 FOREIGN KEY (
+	board_id
+)
+REFERENCES board (
+	board_id
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_3 FOREIGN KEY (
+	board_name
+)
+REFERENCES board (
+	board_name
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_4 FOREIGN KEY (
+	MEMBER_ID
+)
+REFERENCES board (
+	MEMBER_ID
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_5 FOREIGN KEY (
+	MEMBER_GRP
+)
+REFERENCES board (
+	MEMBER_GRP
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_6 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES board (
+	grade_class_code
+);
+
+ALTER TABLE SCRAP ADD CONSTRAINT FK_board_TO_SCRAP_7 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES board (
+	SCHOOL_ID
+);
+
+ALTER TABLE events ADD CONSTRAINT FK_MEMBER_TO_events_1 FOREIGN KEY (
+	MEMBER_ID
+)
+REFERENCES MEMBER (
+	MEMBER_ID
+);
+
+ALTER TABLE events ADD CONSTRAINT FK_MEMBER_TO_events_2 FOREIGN KEY (
+	MEMBER_GRP
+)
+REFERENCES MEMBER (
+	MEMBER_GRP
+);
+
+ALTER TABLE events ADD CONSTRAINT FK_MEMBER_TO_events_3 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES MEMBER (
+	grade_class_code
+);
+
+ALTER TABLE events ADD CONSTRAINT FK_MEMBER_TO_events_4 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES MEMBER (
+	SCHOOL_ID
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_1 FOREIGN KEY (
+	post_id
+)
+REFERENCES board (
+	post_id
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_2 FOREIGN KEY (
+	board_id
+)
+REFERENCES board (
+	board_id
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_3 FOREIGN KEY (
+	board_name
+)
+REFERENCES board (
+	board_name
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_4 FOREIGN KEY (
+	MEMBER_ID
+)
+REFERENCES board (
+	MEMBER_ID
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_5 FOREIGN KEY (
+	MEMBER_GRP
+)
+REFERENCES board (
+	MEMBER_GRP
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_6 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES board (
+	grade_class_code
+);
+
+ALTER TABLE BOARD_COMMENT ADD CONSTRAINT FK_board_TO_BOARD_COMMENT_7 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES board (
+	SCHOOL_ID
+);
+
+ALTER TABLE calendar ADD CONSTRAINT FK_class_code_TO_calendar_1 FOREIGN KEY (
+	grade_class_code
+)
+REFERENCES class_code (
+	grade_class_code
+);
+
+ALTER TABLE calendar ADD CONSTRAINT FK_class_code_TO_calendar_2 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES class_code (
+	SCHOOL_ID
+);
+
+ALTER TABLE class_code ADD CONSTRAINT FK_school_TO_class_code_1 FOREIGN KEY (
+	SCHOOL_ID
+)
+REFERENCES school (
+	SCHOOL_ID
+);
+
+
+--교육관련 테이블 추가
+CREATE TABLE edu_academy (
+	zone_name	VARCHAR2(100)	NOT NULL,
+	academy_name	VARCHAR2(500)	NOT NULL,
+	status	VARCHAR2(10)	NOT NULL	COMMENT '1.개원
+2.휴원',
+	field	VARCHAR2(500)	NOT NULL,
+	addr	VARCHAR2(1000)	NOT NULL,
+	detail_addr	VARCHAR2(1000)	NOT NULL
+);
+
+CREATE TABLE edu_book (
+	book_title	VARCHAR2(500)	NOT NULL,
+	book_writer	VARCHAR2(100)	NOT NULL
+);
+
+
+--20220902테이블 수정
+--컬럼 추가
+alter table board add board_content varchar2(4000);
+alter table board add read_count number;
+alter table board add read_heart number;
+
+alter table board_comment add comment_content varchar2(4000);
+
+alter table board_file add filename varchar2(4000);
+alter table board_file add filepath varchar2(4000);
+
+--달력 테이블 변경
+CREATE TABLE calendar (
+	calendar_id	NUMBER		NOT NULL,
+	division	VARCHAR2(20)		NOT NULL,
+	grade_class_code	NUMBER		NOT NULL,
+	SCHOOL_ID	NUMBER		NOT NULL,
+	context	VARCHAR2(4000)		NOT NULL,
+	calendar_date	DATE	DEFAULT sysdate	NOT NULL
+);
+
+COMMENT ON COLUMN calendar.division IS '1.급식2.일정3.알림장';
+
+ALTER TABLE calendar ADD CONSTRAINT PK_CALENDAR PRIMARY KEY (
+	calendar_id,
+	division,
+	grade_class_code,
+	SCHOOL_ID
+);
+
+ALTER TABLE calendar ADD CONSTRAINT FK_class_code_TO_calendar FOREIGN KEY (
+	grade_class_code, SCHOOL_ID
+)
+REFERENCES class_code (
+	grade_class_code, SCHOOL_ID
+);
+
+commit;
+
+
