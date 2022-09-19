@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="chota">
+
+
+<select id="list" resultType="board.BoardVO">
+select m.name, b.*
+from member m left outer join board b on m.member_id = b.member_id
+where b.member_id like '1'
+</select>
+</mapper>
