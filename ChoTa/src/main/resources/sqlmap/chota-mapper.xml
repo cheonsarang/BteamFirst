@@ -4,7 +4,7 @@
 
 
 <!-- 일반로그인 -->
-<select id="login" resultType="chotamember.ChoTaVO">
+<select id="login" resultType="chotamember.MemberVO">
 select m.*, s.* from member  m left outer join school s
 on m.school_id = s.school_id
 where userid = #{userid} 

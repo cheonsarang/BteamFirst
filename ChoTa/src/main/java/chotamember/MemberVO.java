@@ -3,7 +3,7 @@ package chotamember;
 import java.sql.Date;
 
 public class MemberVO {
-	private String userid, name, userpw, phone, parent_phone, gender, profile, nickname, social, member_grp, grade_class_code, school_id, school_id_1, school_name, office_name, office_code;
+	private String userid, name, userpw, phone, parent_phone, gender, profile, nickname, social, member_grp, grade_class_code, school_id, school_name, office_name, office_code;
 	private Date birth;
 	public String getUserid() {
 		return userid;
@@ -77,12 +77,7 @@ public class MemberVO {
 	public void setSchool_id(String school_id) {
 		this.school_id = school_id;
 	}
-	public String getSchool_id_1() {
-		return school_id_1;
-	}
-	public void setSchool_id_1(String school_id_1) {
-		this.school_id_1 = school_id_1;
-	}
+	
 	public String getSchool_name() {
 		return school_name;
 	}
