@@ -1,0 +1,72 @@
+/* 웹폰트 CSS */
+@import url('https://fonts.googleapis.com/css2?family=Black+Han+Sans&family=Nanum+Brush+Script&family=Nanum+Gothic:wght@400;700;800&family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+/* CSS 초기화 */
+
+    *{
+    margin:0;
+    padding:0;
+    }
+
+    html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, abbr, address, cite, code, del, dfn, em, img, ins, kbd, q, samp, small, strong, sub, sup, var, b, i, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary, time, mark, audio, video {   
+    margin:0;
+    padding:0;
+    border:0;
+    outline:0;
+    font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+     
+    }
+    
+    body {
+    font-family:'Noto Sans Korean','Nanum Gothic',sans-serif;
+    line-height:1;
+    font-size: 16px;
+    color: #000;
+    background-color:#fff;
+    }
+
+    article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section {
+    display:block;
+    }
+    
+    ul, li {
+    list-style:none;
+    }
+
+    a {
+    margin:0; padding:0; font-size:100%;
+    vertical-align:baseline;
+    background:transparent;
+    text-decoration:none;
+    color:#000;
+    -webkit-transition:0.3s; transition:0.3s;
+    }
+
+    /* a:hover {color:#ff7900; -webkit-transition:0.3s; transition:0.3s;}
+    a:focus, .button:focus, button:focus, .btn:focus {outline:none; box-shadow:none;
+        -webkit-transition:0.6s; transition:0.6s;} */
+
+   h1,h2,h3,h4,h5,h6 {color:#000; line-height:1.2;}
+   p {color:#646464;}
+   img {max-width:100%;}
+    
+    /* img {
+    vertical-align:top;
+    } */
+    
+    /* hr {
+    display:block;
+    height:2px;
+    border:0;
+    margin:0;
+    padding:0;
+    } */
+    
+    input, textarea {
+    width:100%; margin:0; padding:0; border:0;
+    /*vertical-align:top;*/
+    border-radius:0; /* 둥근모서리 감추기 */
+    box-sizing:content-box;
+    appearance:none; } /* 외형 감추기 */
+    

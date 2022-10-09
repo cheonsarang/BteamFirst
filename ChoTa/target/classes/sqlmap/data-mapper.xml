@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="data">
+
+
+<delete id="schedule_delete">
+delete from schoolpost
+where category = '일정'
+and grade_class_code = #{grade_class_code}
+and school_id = #{school_id}
+and ymd = #{ymd}
+</delete>
+
+<insert id="schedule_insert">
+insert into schoolpost(category, grade_class_code, school_id, context, ymd)
+values (#{category}, #{grade_class_code}, #{school_id}, #{context}, #{ymd})
+</insert>
+
+<update id="schedule_update">
+update schoolpost set category = '일정', context = #{context}
+where TO_CHAR(ymd, 'YYYYMMDD') = #{ymd}
+</update>
+
+<!-- 스케줄 전체 조회 -->
+<select id="schedule_all" resultType="chotamember.ScheduleVO">
+select *
+from schoolpost
+where grade_class_code = #{grade_class_code}
+and category like '일정'
+and school_id = #{school_id}
+</select>
+
+<select id="schedule_list" resultType="chotamember.ScheduleVO">
+select *
+from schoolpost
+where grade_class_code = #{grade_class_code}
+and TO_CHAR(ymd, 'YYYYMMDD') = #{ymd}
+and category like '일정'
+and school_id = #{school_id}
+</select>
+
+<select id="heart_list" resultType="api.AcademyVO">
+select *
+from edu_academy
+where userid = #{userid}
+<!-- and heart_aca like 1 -->
+</select>
+
+<!-- 학원 찜 -->
+<insert id="insert">
+insert into edu_academy (userid, academy_name, status, field, addr, detail_addr, office_code)
+values (#{userid}, #{academy_name}, #{status}, #{field}, #{addr}, #{detail_addr}, #{office_code})
+</insert>
+
+<delete id="delete">
+delete from edu_academy 
+where userid = #{userid}
+and addr = #{addr}
+and detail_addr = #{detail_addr}
+</delete>
+
+</mapper>

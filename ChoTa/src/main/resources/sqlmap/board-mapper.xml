@@ -3,12 +3,190 @@
 <mapper namespace="board">
 
 
-<select id="list" resultType="board.BoardVO">
-select b.*, m.name, m.nickname
-from board b left outer join member m on b.writer = m.userid;
+<!-- 스크랩 삭제 -->
+<delete id="scrap_delete">
+delete from scrap where scrapper = #{scrapper} and board_id = #{id}
+
+</delete>
+
+
+<!-- 스크랩 저장 -->
+<insert id="scrap_insert">
+insert into scrap (scrapper, board_id)
+values(#{scrapper}, #{id})
+
+</insert>
+
+
+<!-- ↑스크랩 관련 맵퍼 -->
+
+ <!-- 댓글 삭제 -->
+<delete id="comment_delete">
+delete from board_comment where id = #{id}
+
+</delete>
+
+
+<!-- 댓글 목록조회 -->
+<select id="comment_list" resultType="board.BoardCommentVO">
+select name, to_char(writedate, 'yyyy-mm-dd hh24:mi:ss') writedate, c.* 
+from board_comment c left outer join member m on c.writer = m.userid
+where board_id=#{board_id}
+order by id desc
 
 </select>
 
+<!-- 댓글 변경저장 -->
+<update id='comment_update'>
+update board_comment set content = #{content} where id = #{id}
+</update>
+
+
+
+<!-- 댓글 신규저장 -->
+<insert id="comment_insert">
+insert into board_comment (content, writer, board_id)
+values( #{content}, #{writer}, #{board_id} )
+</insert>
+
+<!-- ↑ 댓글관련 맵퍼 ======================================================================================================================= -->
+
+ 
+<!-- 게시판글 글 삭제처리 -->
+<delete id="delete">
+delete from board where id = #{id}
+</delete>
+
+ 
+ <!-- 삭제대상 첨부파일정보 삭제 -->
+<delete id="file_delete">
+delete from board_file where id in (${removed})
+
+</delete>
+
+<!-- 선택된 id목록 첨부파일정보 조회  -->
+<select id="file_list_in" resultType="board.BoardFileVO">
+select * from board_file where id in ( ${removed})			문자그대로 쓰려면 $를 씀
+</select>
+
+
+
+<!--게시판 글 변경저장-->
+<update id="update">
+update board set title = #{title}, content = #{content}, board_group_id = #{board_group_id}
+				, writedate = sysdate, file_path = #{file_path, jdbcType=VARCHAR} where id = #{id}
+</update>
+
+
+
+
+<!-- 해당 첨부파일정보 조회(아직 사용안함)  다운로드할때 필요함-->
+<select id="file_info" resultType="board.BoardFileVO">
+select * from board_file where id =#{id}
+</select>
+
+<!-- 방명록 상세조회시 첨부파일정보 조회  -->
+<select id="file_list" resultType="board.BoardFileVO">
+select * from board_file where board_id = #{board_id}
+
+</select>	
+
+
+<!-- 게시글 조회수 증가처리 -->
+<update id="read">
+update board set readcnt = readcnt + 1
+where id=#{id}
+</update>
+
+
+<!-- 게시판 글 상세보기 -->
+<select id="detail" resultType="board.BoardVO">
+select b.*, m.*, f.*,
+(select bg.board_name from board_group bg where bg.board_group_id = b.board_group_id) as board_name,
+(select s.scrapper from scrap s where s.board_id = b.id) as scrapper
+from board b left outer join member m
+on b.writer = m.userid
+left outer join board_file f
+on b.id = f.board_id
+where b.id = #{id}
+
+</select>
+
+
+<!-- 게시판 그룹별 글(댓글수와 스크랩수, 파일정보 포함) -->
+<select id="board_list_grp" resultType="board.BoardVO">
+select b.*, m.*, f.*,
+(select count(*) from board_comment bc where bc.board_id = b.id) as comment_cnt,
+(select count(*) from scrap s where s.board_id = b.id) as scrap_cnt,
+(select s.scrapper from scrap s where s.board_id = b.id) as scrapper,
+(select bg.board_name from board_group bg where bg.board_group_id = b.board_group_id) as board_name
+from board b left outer join member m
+on b.writer = m.userid
+left outer join board_file f
+on b.id = f.board_id
+where board_group_id = #{board_group_id}
+order by b.id desc
+</select>
+
+
+
+<!-- 게시판 순위별 글(댓글수와 스크랩수, 파일정보 포함) -->
+<select id="board_rank" resultType="board.BoardVO">
+select b.*, m.*, f.*, dense_rank() over(order by readcnt desc) no,
+(select count(*) from board_comment bc where bc.board_id = b.id) as comment_cnt,
+(select count(*) from scrap s where s.board_id = b.id) as scrap_cnt,
+(select s.scrapper from scrap s where s.board_id = b.id) as scrapper,
+(select bg.board_name from board_group bg where bg.board_group_id = b.board_group_id) as board_name
+from member m right outer join  board b 
+on b.writer = m.userid
+left outer join board_file f
+on b.id = f.board_id
+</select>
+
+<!-- 게시판 전체 글(댓글수와 스크랩수, 파일정보 포함) -->
+<select id="board_list" resultType="board.BoardVO">
+select b.*, m.*, f.*,
+(select count(*) from board_comment bc where bc.board_id = b.id) as comment_cnt,
+(select count(*) from scrap s where s.board_id = b.id) as scrap_cnt,
+(select s.scrapper from scrap s where s.board_id = b.id) as scrapper,
+(select bg.board_name from board_group bg where bg.board_group_id = b.board_group_id) as board_name
+from board b left outer join member m
+on b.writer = m.userid
+left outer join board_file f
+on b.id = f.board_id
+order by b.id desc
+
+</select>
+
+
+
+<!-- 게시판에 대한 첨부파일 저장 --><!-- id는 시퀀스 값으로 자동 생성이 되어 따로 지정할 필요없음 -->
+<insert id="file_insert">
+	<foreach collection="fileInfo" item="info" open="insert all" separator=" " close="select * from dual">
+	into board_file(board_id, filename, filepath) 
+	values( #{id}, #{info.filename}, #{info.filepath} )
+	</foreach>
+	<!-- 
+	insert all
+	into ...
+	into ... 
+	into ...
+	
+	 -->
+</insert>
+
+<!-- 게시판 신규 신규저장 -->
+<insert id="insert" >
+<!-- 
+board 에 데이터행을 저장한 후 적용된 시퀀스값을 조회해 파라미터로 받은 데이터객체의 id 필드에 담는다
+ -->
+<selectKey keyProperty="id" order="AFTER" resultType="integer">
+select seq_board.currval from dual
+
+</selectKey>
+insert into board(title, content, writer, writedate, board_group_id, file_path)
+values (#{title}, #{content}, #{writer}, sysdate, #{board_group_id}, #{file_path, jdbcType=VARCHAR})
+</insert>
 
 
 </mapper>

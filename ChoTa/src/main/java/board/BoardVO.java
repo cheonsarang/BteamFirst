@@ -1,29 +1,44 @@
 package board;
 
+import java.util.List;
+
 public class BoardVO {
-	private String board_name, member_id, member_grp, board_content, nickname;
-	private int post_id, board_id, grade_class_code, school_id, read_count, read_heart;
+
+	private	String title, content, writer, writedate, member_grp, board_name, file_path, scrapper;
+	private int id, no, readcnt, read_heart, board_group_id, comment_cnt, scrap_cnt, filecnt;
+	private List<BoardFileVO> fileInfo;
 	
 	
 	
-	
-	public String getNickname() {
-		return nickname;
+	public int getId() {
+		return id;
 	}
-	public void setNickname(String nickname) {
-		this.nickname = nickname;
+	public void setId(int id) {
+		this.id = id;
 	}
-	public String getBoard_name() {
-		return board_name;
+	public String getTitle() {
+		return title;
 	}
-	public void setBoard_name(String board_name) {
-		this.board_name = board_name;
+	public void setTitle(String title) {
+		this.title = title;
 	}
-	public String getMember_id() {
-		return member_id;
+	public String getContent() {
+		return content;
 	}
-	public void setMember_id(String member_id) {
-		this.member_id = member_id;
+	public void setContent(String content) {
+		this.content = content;
+	}
+	public String getWriter() {
+		return writer;
+	}
+	public void setWriter(String writer) {
+		this.writer = writer;
+	}
+	public String getWritedate() {
+		return writedate;
+	}
+	public void setWritedate(String writedate) {
+		this.writedate = writedate;
 	}
 	public String getMember_grp() {
 		return member_grp;
@@ -31,41 +46,25 @@ public class BoardVO {
 	public void setMember_grp(String member_grp) {
 		this.member_grp = member_grp;
 	}
-	public String getBoard_content() {
-		return board_content;
+	
+	public String getBoard_name() {
+		return board_name;
 	}
-	public void setBoard_content(String board_content) {
-		this.board_content = board_content;
+	public void setBoard_name(String board_name) {
+		this.board_name = board_name;
 	}
-	public int getPost_id() {
-		return post_id;
+	
+	public int getNo() {
+		return no;
 	}
-	public void setPost_id(int post_id) {
-		this.post_id = post_id;
+	public void setNo(int no) {
+		this.no = no;
 	}
-	public int getBoard_id() {
-		return board_id;
+	public int getReadcnt() {
+		return readcnt;
 	}
-	public void setBoard_id(int board_id) {
-		this.board_id = board_id;
-	}
-	public int getGrade_class_code() {
-		return grade_class_code;
-	}
-	public void setGrade_class_code(int grade_class_code) {
-		this.grade_class_code = grade_class_code;
-	}
-	public int getSchool_id() {
-		return school_id;
-	}
-	public void setSchool_id(int school_id) {
-		this.school_id = school_id;
-	}
-	public int getRead_count() {
-		return read_count;
-	}
-	public void setRead_count(int read_count) {
-		this.read_count = read_count;
+	public void setReadcnt(int readcnt) {
+		this.readcnt = readcnt;
 	}
 	public int getRead_heart() {
 		return read_heart;
@@ -74,14 +73,57 @@ public class BoardVO {
 		this.read_heart = read_heart;
 	}
 	
+	public int getBoard_group_id() {
+		return board_group_id;
+	}
+	public void setBoard_group_id(int board_group_id) {
+		this.board_group_id = board_group_id;
+	}
+	public int getComment_cnt() {
+		return comment_cnt;
+	}
+	public void setComment_cnt(int comment_cnt) {
+		this.comment_cnt = comment_cnt;
+	}
+	public int getScrap_cnt() {
+		return scrap_cnt;
+	}
+	public void setScrap_cnt(int scrap_cnt) {
+		this.scrap_cnt = scrap_cnt;
+	}	
+	
+	public String getFile_path() {
+		return file_path;
+	}
+	public void setFile_path(String file_path) {
+		this.file_path = file_path;
+	}
+	
+	public int getFilecnt() {
+		return filecnt;
+	}
+	public void setFilecnt(int filecnt) {
+		this.filecnt = filecnt;
+	}
+	public List<BoardFileVO> getFileInfo() {
+		return fileInfo;
+	}
+	public void setFileInfo(List<BoardFileVO> fileInfo) {
+		this.fileInfo = fileInfo;
+	}
+	public String getScrapper() {
+		return scrapper;
+	}
+	public void setScrapper(String scrapper) {
+		this.scrapper = scrapper;
+	}
 	
 	
 	
 	
 	
+
 	
-	
-	
-	
+
 	
 }

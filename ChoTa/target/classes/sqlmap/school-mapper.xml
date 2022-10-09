@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="school">
+
+<!-- 학교포스트 리스트 -->
+<select id="list" resultType="school.SchoolpostVO">
+SELECT s.* ,  m.NAME, m.NICKNAME
+FROM schoolpost s LEFT OUTER JOIN MEMBER m ON s.writer = m.userid
+order by 1 desc
+</select>
+
+<!-- 학교포스트 신규 글 저장 -->
+<insert id="insert">
+insert into schoolpost(category, title, context, writer, writedate, grade_class_code, school_id, file_path)
+values (#{category}, #{title}, #{context}, #{writer}, sysdate, #{grade_class_code}, #{school_id}, #{file_path, jdbcType=VARCHAR})
+</insert>
+
+
+<!-- 학교포스트 글 상세보기 -->
+<select id="detail" resultType="school.SchoolpostVO">
+select s.*, m.*
+from schoolpost s left outer join member m
+on s.writer = m.userid
+where s.schoolpost_id = #{id}
+</select>
+
+<!-- 학교포스트 글 삭제처리 -->
+<delete id="delete">
+delete from schoolpost where schoolpost_id = #{id}
+</delete>
+
+<!--학교포스트 글 변경저장-->
+<update id="update">
+update schoolpost set 
+category = #{category}, title = #{title}, context= #{context},
+file_path = #{file_path, jdbcType=VARCHAR}
+where schoolpost_id = #{id}
+</update>
+
+</mapper>

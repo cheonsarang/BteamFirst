@@ -1,0 +1,94 @@
+@charset "UTF-8";
+/* 기본 */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;300;400;500;700;900&display=swap');
+* { 
+	font-family: 'Noto Sans KR', sans-serif;
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;	
+}
+
+#container {
+	padding-bottom: 20px;
+}
+
+ul, ol { 
+	list-style-type: none;
+	align-items: center;
+	padding: 0px;
+	margin: 0px;
+}
+
+a {
+	text-decoration: none;
+	cursor: pointer;
+}
+
+a:link, a:visited, a:hover { 
+	text-decoration: none;
+	color:inherit;
+}
+
+/* header */
+header {
+	width: 100%;
+	z-index: 10;
+}
+header .inner {
+	width: 1280px !important;
+	height: 120px;
+	margin: 0px auto !important;
+	position: relative; /*자식 absolute 요소의 기준점 설정*/
+}
+
+header .inner .util {
+	margin: 0px auto !important;
+	text-align: right;
+	position: absolute;
+	top: 10px;
+	right: 16%;
+}
+header .inner .util li {
+	float: left;
+}
+header .inner .util li a {
+	display: block;
+	padding: 0px 10px;
+}
+
+header .inner .util li a:hover {
+	color: #6199e6;
+}
+
+header .inner .util li:last-child a {
+	padding-right: 0px;
+}
+
+header .inner #gnb {
+	margin-left: 0px !important;
+	padding-left: 0px !important
+}
+header .inner #gnb li {
+	float: left;
+}
+header .inner #gnb li a {
+	display: block; /*인라인 요소는 block설정하여 크기를 조절가능*/
+	font-weight: 700;
+	font-size: 16px;
+	color: #333;
+	padding: 20px;
+	margin-top: 8px;
+}
+
+header .inner #gnb li a:hover {
+	color: #6199e6;
+}
+
+
+

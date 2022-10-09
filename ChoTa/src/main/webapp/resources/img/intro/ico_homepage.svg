@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="158" height="132" viewBox="0 0 158 132">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0069f9"/>
+      <stop offset="1" stop-color="#b7ffd6"/>
+    </linearGradient>
+    <clipPath id="clip-path">
+      <circle id="타원_32" data-name="타원 32" cx="64" cy="64" r="64" transform="translate(340 4982)" fill="#585f68"/>
+    </clipPath>
+    <linearGradient id="linear-gradient-4" x1="0.5" x2="0.5" y2="1" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#0062e8"/>
+      <stop offset="1" stop-color="#8bffff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-5" x1="0.786" y1="1" x2="0.822" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#fff"/>
+      <stop offset="1" stop-color="#8bffff"/>
+    </linearGradient>
+    <linearGradient id="linear-gradient-6" x1="0.747" x2="0.747" xlink:href="#linear-gradient-5"/>
+  </defs>
+  <g id="icon_homepage" transform="translate(-338 -4980)">
+    <rect id="area" width="158" height="132" transform="translate(338 4980)" fill="#fff" opacity="0"/>
+    <circle id="타원_78" data-name="타원 78" cx="64" cy="64" r="64" transform="translate(340 4982)" fill="url(#linear-gradient)"/>
+    <g id="그룹_275" data-name="그룹 275" transform="translate(169 293)" opacity="0.2">
+      <g id="마스크_그룹_48" data-name="마스크 그룹 48" transform="translate(-169 -293)" clip-path="url(#clip-path)">
+        <path id="사각형_346" data-name="사각형 346" d="M0,0H86a0,0,0,0,1,0,0V103a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V0A0,0,0,0,1,0,0Z" transform="translate(361 5015)" fill="url(#linear-gradient)"/>
+      </g>
+      <path id="사각형_311" data-name="사각형 311" d="M6,0H80a6,6,0,0,1,6,6v4a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V6A6,6,0,0,1,6,0Z" transform="translate(192 4716)" fill="#fff"/>
+      <circle id="타원_57" data-name="타원 57" cx="2" cy="2" r="2" transform="translate(198 4719)" fill="#0e75f6"/>
+      <circle id="타원_58" data-name="타원 58" cx="2" cy="2" r="2" transform="translate(205 4719)" fill="#0e75f6"/>
+      <circle id="타원_59" data-name="타원 59" cx="2" cy="2" r="2" transform="translate(212 4719)" fill="#0e75f6"/>
+    </g>
+    <g id="그룹_276" data-name="그룹 276" transform="translate(169 293)">
+      <g id="마스크_그룹_48-2" data-name="마스크 그룹 48" transform="translate(-169 -293)" clip-path="url(#clip-path)">
+        <path id="사각형_346-2" data-name="사각형 346" d="M0,0H100a0,0,0,0,1,0,0V103a6,6,0,0,1-6,6H6a6,6,0,0,1-6-6V0A0,0,0,0,1,0,0Z" transform="translate(354 5039)" fill="url(#linear-gradient)"/>
+      </g>
+      <path id="사각형_311-2" data-name="사각형 311" d="M6,0H94a6,6,0,0,1,6,6v4a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V6A6,6,0,0,1,6,0Z" transform="translate(185 4736)" fill="#fff"/>
+      <circle id="타원_57-2" data-name="타원 57" cx="2" cy="2" r="2" transform="translate(191 4739)" fill="#0e75f6"/>
+      <circle id="타원_58-2" data-name="타원 58" cx="2" cy="2" r="2" transform="translate(198 4739)" fill="#0e75f6"/>
+      <circle id="타원_59-2" data-name="타원 59" cx="2" cy="2" r="2" transform="translate(205 4739)" fill="#0e75f6"/>
+    </g>
+    <g id="그룹_646" data-name="그룹 646" transform="translate(-3 -6)">
+      <ellipse id="타원_140" data-name="타원 140" cx="13" cy="12.5" rx="13" ry="12.5" transform="translate(453 5072)" fill="#fff"/>
+      <path id="add-round-button" d="M17.5,0A17.5,17.5,0,1,0,35,17.5,17.5,17.5,0,0,0,17.5,0Zm6.38,19.831H19.831v4.047a2.333,2.333,0,0,1-4.666,0V19.831H11.119a2.333,2.333,0,1,1,0-4.666h4.046V11.119a2.333,2.333,0,1,1,4.666,0v4.046h4.047a2.333,2.333,0,0,1,0,4.666Z" transform="translate(449.379 5065.037)" fill="url(#linear-gradient-4)"/>
+    </g>
+    <g id="edit" transform="translate(403.192 5062.5)">
+      <path id="합치기_21" data-name="합치기 21" d="M2560.068-766.259a.892.892,0,0,1-.243-.8l1.257-6.284a.9.9,0,0,1,.243-.453l14.06-14.058,6.281,6.281-14.058,14.058a.889.889,0,0,1-.455.244l-6.281,1.255a.839.839,0,0,1-.175.018A.891.891,0,0,1,2560.068-766.259Zm17.2-23.483,2.459-2.459a4.445,4.445,0,0,1,6.281,0,4.413,4.413,0,0,1,1.3,3.141,4.406,4.406,0,0,1-1.3,3.14l-2.459,2.459Z" transform="translate(-2551.618 793.5)" fill="url(#linear-gradient-5)"/>
+    </g>
+    <g id="trash" transform="translate(374.279 5059.227)">
+      <rect id="사각형_638" data-name="사각형 638" width="18" height="20" transform="translate(4.721 11.773)" fill="#076ef7"/>
+      <path id="합치기_20" data-name="합치기 20" d="M2591.07-758.57a2.964,2.964,0,0,1-2.965-2.827l-.815-17.13a.308.308,0,0,1,.309-.323h21.966a.309.309,0,0,1,.309.323l-.816,17.13a2.963,2.963,0,0,1-2.964,2.827Zm11.469-17.807v12.86a.989.989,0,0,0,.989.989.989.989,0,0,0,.99-.989v-12.86a.989.989,0,0,0-.99-.99A.989.989,0,0,0,2602.539-776.376Zm-4.946,0v12.86a.988.988,0,0,0,.989.989.988.988,0,0,0,.989-.989v-12.86a.989.989,0,0,0-.989-.99A.989.989,0,0,0,2597.593-776.376Zm-4.947,0v12.86a.989.989,0,0,0,.989.989.989.989,0,0,0,.99-.989v-12.86a.989.989,0,0,0-.99-.99A.989.989,0,0,0,2592.646-776.376Zm-5.936-4.452a.989.989,0,0,1-.989-.989V-783.8a2.473,2.473,0,0,1,2.473-2.473h5.44v-.989a2.968,2.968,0,0,1,2.968-2.967h3.957a2.967,2.967,0,0,1,2.967,2.967v.989h5.441a2.474,2.474,0,0,1,2.473,2.473v1.979a.989.989,0,0,1-.989.989Zm8.9-6.43v.989h5.936v-.989a.99.99,0,0,0-.989-.989H2596.6A.99.99,0,0,0,2595.615-787.259Z" transform="translate(-2585.721 790.226)" fill="url(#linear-gradient-6)"/>
+    </g>
+  </g>
+</svg>

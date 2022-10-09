@@ -165,7 +165,7 @@ public class CommonService {
 		}catch(Exception e) {}
 		
 		// /upload/profile/2022/08/23/abc.png
-		return appName(request) + upload + "/" + uuid;
+		return upload + "/" + uuid;
 	}
 	
 	public String appName(HttpServletRequest r) {

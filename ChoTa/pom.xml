@@ -115,23 +115,6 @@
 			<artifactId>junit</artifactId>
 			<version>4.7</version>
 			<scope>test</scope>
-		</dependency> 
-		
-		<!-- Gson 사용을 위해 -->
-		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
-		<dependency>
-		    <groupId>com.google.code.gson</groupId>
-		    <artifactId>gson</artifactId>
-		    <version>2.8.5</version>
-		</dependency>
-		
-		
-			<!-- 스프링에서 jdbc를 사용하기 위한 라이브러리 -->
-		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
-		<dependency>
-		    <groupId>org.springframework</groupId>
-		    <artifactId>spring-jdbc</artifactId>
-		    <version>5.3.18</version>
 		</dependency>
 		
 		<!-- DBCP 사용을 위한 라이브러리 -->
@@ -141,7 +124,7 @@
 		    <artifactId>commons-dbcp</artifactId>
 		    <version>1.4</version>
 		</dependency>
-
+		
 		<!-- 마이바티스 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis -->
 		<dependency>
@@ -149,15 +132,15 @@
 		    <artifactId>mybatis</artifactId>
 		    <version>3.5.9</version>
 		</dependency>
-
-		<!-- 스프링에서 마이바티스 사용을 위한 라이브러리 -->
+		
+		<!-- 스프링에서의 마이바티스 사용을 위한 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/org.mybatis/mybatis-spring -->
 		<dependency>
 		    <groupId>org.mybatis</groupId>
 		    <artifactId>mybatis-spring</artifactId>
 		    <version>2.0.6</version>
 		</dependency>
-				
+		
 		<!-- 오라클용 jdbc 라이브러리 -->
 		<!-- https://mvnrepository.com/artifact/com.oracle.database.jdbc/ojdbc8 -->
 		<dependency>
@@ -166,44 +149,61 @@
 		    <version>21.5.0.0</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp 2022.07.28 YSH -->
+		<!-- 타일 적용 - 상단, 하단 등 기본적 템플릿 만들기 위함 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.tiles/tiles-jsp -->
 		<dependency>
 		    <groupId>org.apache.tiles</groupId>
 		    <artifactId>tiles-jsp</artifactId>
 		    <version>3.0.8</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind 2022.07.28 YSH -->
+		<!-- 스프링에서 jdbc를 사용하기 위한 라이브러리 -->
+		<!-- https://mvnrepository.com/artifact/org.springframework/spring-jdbc -->
+		<dependency>
+		    <groupId>org.springframework</groupId>
+		    <artifactId>spring-jdbc</artifactId>
+		    <version>5.3.18</version>
+		</dependency>
+		
+		<!-- responsebody 적용될 수 있게 해준다 -->
+		<!-- https://mvnrepository.com/artifact/com.fasterxml.jackson.core/jackson-databind -->
 		<dependency>
 		    <groupId>com.fasterxml.jackson.core</groupId>
 		    <artifactId>jackson-databind</artifactId>
 		    <version>2.13.3</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email 2022.08.17 YSH-->
+		<!-- 이메일 전송기능 -->
+		<!-- https://mvnrepository.com/artifact/org.apache.commons/commons-email -->
 		<dependency>
 		    <groupId>org.apache.commons</groupId>
 		    <artifactId>commons-email</artifactId>
 		    <version>1.5</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/org.json/json 2022.08.21 YSH-->
+		<!--소셜 연결을 위해 json 형태 입력할 수 있게 바꿈 -->
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
 		<dependency>
 		    <groupId>org.json</groupId>
 		    <artifactId>json</artifactId>
 		    <version>20220320</version>
 		</dependency>
 		
-		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload 
-			첨부파일 업로드 2022.08.23 YSH-->
+		<!-- 첨부파일 업로드 -->
+		<!-- https://mvnrepository.com/artifact/commons-fileupload/commons-fileupload -->
 		<dependency>
 		    <groupId>commons-fileupload</groupId>
 		    <artifactId>commons-fileupload</artifactId>
 		    <version>1.4</version>
 		</dependency>
-		  
 		
-		       
+		<!-- https://mvnrepository.com/artifact/com.google.code.gson/gson -->
+		<dependency>
+		    <groupId>com.google.code.gson</groupId>
+		    <artifactId>gson</artifactId>
+		    <version>2.8.5</version>
+		</dependency>
+	       
 	</dependencies>
     <build>
         <plugins>

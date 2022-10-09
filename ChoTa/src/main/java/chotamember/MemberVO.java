@@ -3,8 +3,31 @@ package chotamember;
 import java.sql.Date;
 
 public class MemberVO {
-	private String userid, name, userpw, phone, parent_phone, gender, profile, nickname, social, member_grp, grade_class_code, school_id, school_name, office_name, office_code;
+	private String userid, name, userpw, phone, parent_phone, gender, profile, nickname, social, member_grp, grade_class_code, school_id, teacher, school_name, office_name, office_code; 
 	private Date birth;
+	
+	public MemberVO() {}
+	
+	
+	public MemberVO(String userid, String name, String userpw, String phone, String gender, String social,
+			String member_grp, String grade_class_code, String school_id, String school_name, String office_name,
+			String office_code, Date birth) {
+		super();
+		this.userid = userid;
+		this.name = name;
+		this.userpw = userpw;
+		this.phone = phone;
+		this.gender = gender;
+		this.social = social;
+		this.member_grp = member_grp;
+		this.grade_class_code = grade_class_code;
+		this.school_id = school_id;
+		this.school_name = school_name;
+		this.office_name = office_name;
+		this.office_code = office_code;
+		this.birth = birth;
+	}
+
 	public String getUserid() {
 		return userid;
 	}
@@ -13,6 +36,12 @@ public class MemberVO {
 	}
 	public String getName() {
 		return name;
+	}
+	public String getTeacher() {
+		return teacher;
+	}
+	public void setTeacher(String teacher) {
+		this.teacher = teacher;
 	}
 	public void setName(String name) {
 		this.name = name;
@@ -102,6 +131,10 @@ public class MemberVO {
 	public void setBirth(Date birth) {
 		this.birth = birth;
 	}
+	
+	
+
+	
 	
 	
 	
